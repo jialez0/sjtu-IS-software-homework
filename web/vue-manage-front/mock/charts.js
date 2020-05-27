@@ -1,7 +1,7 @@
 
 export default [
   {
-    url: '/vue-admin-template/charts',
+    url: '/charts',
     type: 'get',
     response: () => {
       return {

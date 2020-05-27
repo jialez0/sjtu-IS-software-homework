@@ -59,7 +59,12 @@ export default {
   methods: {
     initChart() {
       this.chart = echarts.init(this.$el, 'macarons')
-      this.setOptions(this.chartData)
+      if (this.chartData.dates) {
+        console.log(this.chartData.dates)
+        this.setOptions(this.chartData)
+      } else {
+        console.log(this.chartData.dates)
+      }
     },
     setOptions({ dates, newVisits, allVisits } = {}) {
       this.chart.setOption({
