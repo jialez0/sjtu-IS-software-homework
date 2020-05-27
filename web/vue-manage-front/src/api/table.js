@@ -7,3 +7,11 @@ export function getList(params) {
     params
   })
 }
+
+export function getLocationList(params) {
+  return request({
+    url: '/vue-admin-template/table/locationlist',
+    method: 'get',
+    params
+  })
+}

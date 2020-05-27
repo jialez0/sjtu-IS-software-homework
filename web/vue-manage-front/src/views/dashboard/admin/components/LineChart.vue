@@ -61,18 +61,19 @@ export default {
       this.chart = echarts.init(this.$el, 'macarons')
       this.setOptions(this.chartData)
     },
-    setOptions({ expectedData, actualData } = {}) {
+    setOptions({ dates, newVisits, allVisits } = {}) {
       this.chart.setOption({
         xAxis: {
-          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+          data: dates,
           boundaryGap: false,
+          name: '日期',
           axisTick: {
             show: false
           }
         },
         grid: {
-          left: 10,
-          right: 10,
+          left: 20,
+          right: 40,
           bottom: 20,
           top: 30,
           containLabel: true
@@ -85,15 +86,16 @@ export default {
           padding: [5, 10]
         },
         yAxis: {
+          name: '人数',
           axisTick: {
             show: false
           }
         },
         legend: {
-          data: ['expected', 'actual']
+          data: ['新增人数', '总人数']
         },
         series: [{
-          name: 'expected', itemStyle: {
+          name: '新增人数', itemStyle: {
             normal: {
               color: '#FF005A',
               lineStyle: {
@@ -104,12 +106,12 @@ export default {
           },
           smooth: true,
           type: 'line',
-          data: expectedData,
+          data: newVisits,
           animationDuration: 2800,
           animationEasing: 'cubicInOut'
         },
         {
-          name: 'actual',
+          name: '总人数',
           smooth: true,
           type: 'line',
           itemStyle: {
@@ -124,7 +126,7 @@ export default {
               }
             }
           },
-          data: actualData,
+          data: allVisits,
           animationDuration: 2800,
           animationEasing: 'quadraticOut'
         }]
