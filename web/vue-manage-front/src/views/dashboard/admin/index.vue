@@ -3,7 +3,7 @@
 
     <panel-group :panel-data="panelData" @handleSetLineChartData="handleSetLineChartData" />
 
-    <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
+    <el-row v-loading="listLoading" style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
       <component :is="chosenChart" :chart-data="chartData" />
     </el-row>
   </div>
@@ -29,12 +29,22 @@ export default {
       lineChartData: {},
       panelData: {},
       pieChartData: {},
-      chosenChart: 'LineChart',
-      chartData: {}
+      chartData: {},
+      chosenChart: 'LineChart'
     }
   },
   created() {
     this.fetchChartsData()
+    if (this.timer) {
+      clearInterval(this.timer)
+    } else {
+      this.timer = setInterval(() => {
+        this.fetchChartsData()
+      }, 10000)
+    }
+  },
+  destroyed() {
+    clearInterval(this.timer)
   },
   methods: {
     handleSetLineChartData(type) {
@@ -51,7 +61,11 @@ export default {
         this.lineChartData = response.data.line
         this.panelData = response.data.panel
         this.pieChartData = response.data.pie
-        this.handleSetLineChartData('locations')
+        if (this.chosenChart === 'LineChart') {
+          this.chartData = this.lineChartData
+        } else {
+          this.chartData = this.pieChartData
+        }
       })
     }
   }
