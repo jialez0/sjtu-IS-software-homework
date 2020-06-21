@@ -77,18 +77,34 @@ export const constantRoutes = [
     ]
   },
 
-  // {
-  //   path: '/form',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: 'Form',
-  //       component: () => import('@/views/form/index'),
-  //       meta: { title: 'Form', icon: 'form' }
-  //     }
-  //   ]
-  // },
+  {
+    path: '/form',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Form',
+        component: () => import('@/views/form/index'),
+        meta: { title: '信息维护', icon: 'form' }
+      }
+    ]
+  },
+
+  {
+    path: 'external-link',
+    component: Layout,
+    meta: { title: '相关链接', icon: 'links' },
+    children: [
+      {
+        path: 'https://www.sjtu.edu.cn/',
+        meta: { title: 'SJTU', icon: 'link' }
+      },
+      {
+        path: 'http://bwc.sjtu.edu.cn/',
+        meta: { title: '保卫处', icon: 'link' }
+      }
+    ]
+  },
 
   // {
   //   path: '/nested',
@@ -144,17 +160,6 @@ export const constantRoutes = [
   //       path: 'menu2',
   //       component: () => import('@/views/nested/menu2/index'),
   //       meta: { title: 'menu2' }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: 'external-link',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-  //       meta: { title: 'External Link', icon: 'link' }
   //     }
   //   ]
   // },

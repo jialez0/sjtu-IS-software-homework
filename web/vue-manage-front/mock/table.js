@@ -24,7 +24,7 @@ const data2 = Mock.mock({
 
 export default [
   {
-    url: '/vue-admin-template/table/list',
+    url: '/table/userlist',
     type: 'get',
     response: config => {
       const items = data.items
@@ -38,7 +38,7 @@ export default [
     }
   },
   {
-    url: '/vue-admin-template/table/locationlist',
+    url: '/table/locationlist',
     type: 'get',
     response: config => {
       const items = data2.items
