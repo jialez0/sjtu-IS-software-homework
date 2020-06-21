@@ -1,0 +1,4 @@
+<view>
+  <qrcode class="iblock" value="{{total_micro_seconds}}" width="440">
+  </qrcode>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+    <view class="helloRgist">
+        <text>欢迎登录校外人员管理系统</text>
+    </view>
+    <form class="myForm" bindsubmit="LogIn">
+        <view class="form-section">
+            <view class="account-contain">
+                <input class="account-input" name="username" placeholder=" 用户名" />
+            </view>
+        </view>
+        <view class="form-section">
+            <view class="account-contain">
+                <input type="password" class="account-input" name="password" placeholder=" 密码" />
+            </view>
+        </view>
+        <view class="btn-area">
+            <button class="cu-bn.block" type="primary" type="primary" formType="submit">登录</button>
+        </view>
+    </form>
+</view>

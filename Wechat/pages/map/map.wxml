@@ -1,0 +1,14 @@
+
+  <map class="my-map"
+  longitude = '{{longitude}}'
+  latitude = '{{latitude}}'
+  scale = '16'
+  controls = "{{controls}}"
+  bindcontroltap= "controltap"
+  markers = '{{markers}}'
+  bindmarkertap="markertap"
+  show-location></map>
+  <view class="passport">
+    <view class="countdown">剩余通行时长：<text style='color:red'>{{clock}}{{micro_second}}</text></view>
+    <button class="cu-bn.block" type="primary" bindtap="scanCode">扫码获取通行时长</button>
+  </view>
