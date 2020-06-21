@@ -1,0 +1,26 @@
+<map class="my-map"
+  longitude = '{{longitude}}'
+  latitude = '{{latitude}}'
+  scale = '16'
+  controls = "{{controls}}"
+  bindcontroltap= "controltap"
+  markers = '{{markers}}'
+  bindmarkertap="markertap"
+  show-location></map>
+
+<view class="padding bg-white">
+  <view class="flex">
+    <view class="flex-twice"> 设置通行时长：</view>
+    <view class="flex-sub">
+    <input name="hours" type="number"></input>小时
+    </view>
+    <view class="flex-sub">
+    <input name="minutes" type="number"></input>分钟
+    </view>
+    <view class="flex-sub"><input name="seconds" type="number"></input>秒
+    </view>
+  </view>
+  <view class="passport">
+    <button class="cu-bn.block" type="primary" bindtap="scanCode"> 授权设置通行时长 </button>
+  </view>
+</view>
