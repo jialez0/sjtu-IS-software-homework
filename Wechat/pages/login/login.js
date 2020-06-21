@@ -33,9 +33,9 @@ Page({
       url: '../guardsPage/guard',
     })
     // wx.request({
-    //   url: 'sjtuidcard.xyz',
+    //   url: 'http://127.0.0.1:5000/wx/login',
     //   data: {
-    //   username: e.detail.value.username,
+    //   data: e.detail.value.username,
     //   password: e.detail.value.password
     //   },
     //   header: {
@@ -43,7 +43,7 @@ Page({
     //   },
     //   method:'POST',
     //   success:function(res) {
-    //     if (res.data.result == 1) {
+    //     if (res.data.status == '门卫') {
     //       wx.redirectTo({
     //        url: '../guardsPage/guard',
     //       })

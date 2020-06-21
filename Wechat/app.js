@@ -19,11 +19,11 @@ App({
           method:'POST',
           success:function(res) {
             //console.log(res.data.openid);
-            wx.request({
-              url: 'wx_login.sjtuidcard.xyz',
-              data:res.data.openid,
-              method:'POST',
-            })
+            //wx.request({
+            //  url: 'http://127.0.0.1:5000/wx/login',
+            //  data:res.data.openid,
+            //  method:'POST',
+            //})
           },
         })
       }
