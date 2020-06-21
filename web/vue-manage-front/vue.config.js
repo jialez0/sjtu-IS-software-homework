@@ -6,7 +6,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = defaultSettings.title || 'vue Admin Template' // page title
+const name = defaultSettings.title || 'Vue admin Template' // page title
 
 // If your port is set to 80,
 // use administrator privileges to execute the command line.
@@ -36,16 +36,16 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    proxy: {
-      [process.env.VUE_APP_BASE_API]: {
-        target: `http://127.0.0.1:5000/webapi`, // 这里放目标url
-        changeOrigin: true, // 允许跨域
-        pathRewrite: {
-          ['^' + process.env.VUE_APP_BASE_API]: '' // 将/dev重写为空
-        }
-      }
-    }
-    // after: require('./mock/mock-server.js') // 若不用mock测试注释掉此行, 然后将proxy取消注释
+    // proxy: {
+    //   [process.env.VUE_APP_BASE_API]: {
+    //     target: `http://127.0.0.1:5000/webapi`, // 这里放目标url
+    //     changeOrigin: true, // 允许跨域
+    //     pathRewrite: {
+    //       ['^' + process.env.VUE_APP_BASE_API]: '' // 将/dev重写为空
+    //     }
+    //   }
+    // }
+    after: require('./mock/mock-server.js') // 若不用mock测试注释掉此行, 然后将proxy取消注释
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
