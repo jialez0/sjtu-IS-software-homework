@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/map/map",
-    "pages/guardsPage/guard"
+    "pages/guardsPage/guard",
+    "pages/qrcode/qrcode",
+    "pages/login/login"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -9,18 +9,20 @@
   show-location></map>
 
 <view class="padding bg-white">
-  <view class="flex">
-    <view class="flex-twice"> 设置通行时长：</view>
-    <view class="flex-sub">
-    <input name="hours" type="number"></input>小时
+  <view class="page-section">
+    <view class="weui-cells__title">请设置通行时长</view>
+    <form bindsubmit="formSubmit">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" name="hours" type="number" placeholder="输入小时数" />
+        <input class="weui-input" name="minutes" type="number" placeholder="输入分钟数" />
+        <input class="weui-input" name="seconds" type="number" placeholder="输入秒数" />
+      </view>
     </view>
-    <view class="flex-sub">
-    <input name="minutes" type="number"></input>分钟
-    </view>
-    <view class="flex-sub"><input name="seconds" type="number"></input>秒
-    </view>
+    <view class="passport">
+    <button class="cu-bn.block" form-type="submit" type="primary"> 授权设置通行时长 </button>
   </view>
-  <view class="passport">
-    <button class="cu-bn.block" type="primary" bindtap="scanCode"> 授权设置通行时长 </button>
+    </form>
   </view>
+  
 </view>

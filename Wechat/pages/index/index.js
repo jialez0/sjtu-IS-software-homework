@@ -57,7 +57,7 @@ Page({
   },
   guardLogIn:function(){
     wx.redirectTo({
-      url: '../guardsPage/guard',
+      url: '../login/login',
     })
   }
 })

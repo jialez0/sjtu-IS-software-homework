@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "qrcode": "../components/qrcode/index"
+  },
+  "navigationBarTitleText": "二维码生成页面"
+}

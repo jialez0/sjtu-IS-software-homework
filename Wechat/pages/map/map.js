@@ -1,4 +1,4 @@
-var total_micro_second = 0;
+var total_micro_second = 0
 
 function countdown(that){
   that.setData({
@@ -49,8 +49,10 @@ Page({
   scanCode:function() {
     wx.scanCode({
       complete: (res) => {
-        console.log(res);
-        total_micro_second = res.result;
+        //console.log(res);
+        total_micro_second = parseInt(res.result)
+        console.log(total_micro_second)
+        countdown(this)
       },
     })
   },
