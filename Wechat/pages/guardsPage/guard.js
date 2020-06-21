@@ -1,6 +1,10 @@
 
 function timeformat(hours,minutes,seconds) {
-  var total_micro_seconds = (hours*3600 + minutes*60 + seconds)*1000;
+  var total_micro_seconds = (Number(hours*3600) + Number(minutes*60) + Number(seconds))*1000;
+  /*console.log(hours);
+  console.log(minutes);
+  console.log(seconds);
+  console.log(total_micro_seconds);*/
   return total_micro_seconds;
 }
 Page({
