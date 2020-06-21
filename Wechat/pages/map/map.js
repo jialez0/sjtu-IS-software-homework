@@ -23,6 +23,22 @@ function dateformat(micro_second) {
   var sec = (second - hr * 3600 - min * 60);// equal to => var sec = second % 60;
   return day+"天"+hr2 + "时" + min + "分" + sec + "秒" ;
 }
+function getLocation(that) {
+  wx.getLocation({
+    type:'wgs84',
+    success: function (res) {
+      console.log('纬度' + res.latitude);
+      console.log('经度' + res.longitude);
+      that.setData({
+        latitude:res.latitude,
+        longitude:res.longitude,
+      })
+    },
+  })
+  setTimeout(function() {
+    getLocation(that);
+  }, 10*1000)
+}
 Page({
   data: {
     markers:[],
@@ -33,17 +49,7 @@ Page({
 
   onLoad:function(options) {
     var that = this
-    wx.getLocation({
-      type:'wgs84',
-      success: function (res) {
-        console.log('纬度' + res.latitude);
-        console.log('经度' + res.longitude);
-        that.setData({
-          latitude:res.latitude,
-          longitude:res.longitude,
-        })
-      },
-    })
+    getLocation(that);
     countdown(this);
   },
   scanCode:function() {
